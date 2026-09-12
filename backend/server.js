@@ -1,5 +1,4 @@
 require('dotenv').config();
-
 const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -20,10 +19,8 @@ const pool = new Pool({
     port: process.env.DB_PORT,
 });
 
-
 const JWT_SECRET = process.env.JWT_SECRET;
 
-// --- Register route ---
 app.post('/api/register', async (req, res) => {
     const { name, email, password } = req.body;
 
@@ -51,7 +48,6 @@ app.post('/api/register', async (req, res) => {
     }
 });
 
-// --- Login route ---
 app.post('/api/login', async (req, res) => {
     const { email, password } = req.body;
 
@@ -87,7 +83,6 @@ app.post('/api/login', async (req, res) => {
     }
 });
 
-// --- Middleware to protect routes ---
 const verifyToken = (req, res, next) => {
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1];
@@ -105,7 +100,6 @@ const verifyToken = (req, res, next) => {
     });
 };
 
-// --- Example protected route ---
 app.get('/api/dashboard', verifyToken, (req, res) => {
     res.json({ message: `Welcome to the secure dashboard, user ID: ${req.user.userId}` });
 });
