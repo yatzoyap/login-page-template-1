@@ -142,4 +142,4 @@ This is a temporary workaround for local testing. Once the backend is deployed (
 
 This project is for personal/portfolio use. 
 
-As of 9th of September 2026, the website is still running localhost 3000
+As of 12th of September 2026, the website is still running localhost 3000
