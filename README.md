@@ -140,5 +140,6 @@ This is a temporary workaround for local testing. Once the backend is deployed (
 
 ## License
 
-This project is for personal/portfolio use.
+This project is for personal/portfolio use. 
+
 As of 9th of September 2026, the website is still running localhost 3000
